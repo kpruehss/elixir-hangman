@@ -1,5 +1,5 @@
 defmodule Hangman do
   alias Hangman.Game
 
-  defdelegate new_game(), to: Game
+  defdelegate init_game(), to: Game, as: :new_game
 end
