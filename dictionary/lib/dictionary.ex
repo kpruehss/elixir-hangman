@@ -1,18 +1,13 @@
 defmodule Dictionary do
-  @moduledoc """
-  Documentation for `Dictionary`.
-  """
+  def random_word do
+    load_word_list()
+    |> Enum.random()
+  end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Dictionary.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def load_word_list do
+    "../assets/words.txt"
+    |> Path.expand(__DIR__)
+    |> File.read!()
+    |> String.split(~r/\n/)
   end
 end
