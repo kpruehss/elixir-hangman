@@ -1,5 +1,5 @@
 {application,hangman,
-             [{applications,[kernel,stdlib,elixir,logger]},
+             [{applications,[kernel,stdlib,elixir,logger,dictionary]},
               {description,"hangman"},
               {modules,['Elixir.Hangman']},
               {registered,[]},
