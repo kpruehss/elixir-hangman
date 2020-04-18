@@ -15,21 +15,21 @@ defmodule GameTest do
   test "state isn't changed for :won or :lost game" do
     for state <- [:won, :lost] do
       game = Game.new_game() |> Map.put(:game_state, state)
-      assert {^game, _} = Game.make_move(game, "x")
+      assert ^game = Game.make_move(game, "x")
     end
   end
 
   test "First/Second occurrence of letter is not/is already used " do
     game = Game.new_game()
-    {game, _tally} = Game.make_move(game, "x")
+    game = Game.make_move(game, "x")
     assert game.game_state != :already_used
-    {game, _tally} = Game.make_move(game, "x")
+    game = Game.make_move(game, "x")
     assert game.game_state == :already_used
   end
 
   test "a good guess is recognized" do
     game = Game.new_game("puckers")
-    {game, _tally} = Game.make_move(game, "p")
+    game = Game.make_move(game, "p")
     assert game.game_state == :good_guess
     assert game.turns_left == 7
   end
@@ -48,7 +48,7 @@ defmodule GameTest do
     game = Game.new_game("puckers")
 
     fun = fn {guess, state}, game ->
-      {game, _tally} = Game.make_move(game, guess)
+      game = Game.make_move(game, guess)
       assert game.game_state == state
       game
     end
@@ -58,7 +58,7 @@ defmodule GameTest do
 
   test "bad guess is recognized" do
     game = Game.new_game("puckers")
-    {game, _tally} = Game.make_move(game, "t")
+    game = Game.make_move(game, "t")
     assert game.game_state == :bad_guess
     assert game.turns_left == 6
   end
@@ -77,7 +77,7 @@ defmodule GameTest do
     game = Game.new_game("w")
 
     fun = fn {guess, state, index}, game ->
-      {game, _tally} = Game.make_move(game, guess)
+      game = Game.make_move(game, guess)
       assert game.game_state == state
 
       assert game.turns_left == index
