@@ -24,7 +24,7 @@ defmodule Hangman.Game do
   end
 
   def make_move(game, guess) do
-    accept_move(game, guess, MapSet.member?(game.used, guess))
+    accept_move(game, clean_input(guess), MapSet.member?(game.used, guess))
   end
 
   def tally(game) do
@@ -36,6 +36,9 @@ defmodule Hangman.Game do
   end
 
   ##############################################################################
+  defp clean_input(input) do
+    input |> String.at(0) |> String.downcase()
+  end
 
   defp accept_move(game, _guess, _already_guessed = true) do
     Map.put(game, :game_state, :already_used)
