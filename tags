@@ -1,0 +1,53 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/ca0412ab/
+Dictionary	dictionary/README.md	/^# Dictionary$/;"	c
+Dictionary	dictionary/lib/dictionary.ex	/^defmodule Dictionary do$/;"	m
+DictionaryTest	dictionary/test/dictionary_test.exs	/^defmodule DictionaryTest do$/;"	m
+Game	hangman/lib/hangman/game.ex	/^defmodule Hangman.Game do$/;"	m
+GameTest	hangman/test/game_test.exs	/^defmodule GameTest do$/;"	m
+Hangman	hangman/README.md	/^# Hangman$/;"	c
+Hangman	hangman/lib/hangman.ex	/^defmodule Hangman do$/;"	m
+HangmanTest	hangman/test/hangman_test.exs	/^defmodule HangmanTest do$/;"	m
+Installation	dictionary/README.md	/^## Installation$/;"	s	chapter:Dictionary
+Installation	hangman/README.md	/^## Installation$/;"	s	chapter:Hangman
+MixProject	dictionary/mix.exs	/^defmodule Dictionary.MixProject do$/;"	m
+MixProject	hangman/mix.exs	/^defmodule Hangman.MixProject do$/;"	m
+a good guess is recognized	hangman/test/game_test.exs	/^  test "a good guess is recognized" do$/;"	t	module:GameTest
+a guessed word is a won game	hangman/test/game_test.exs	/^  test "a guessed word is a won game" do$/;"	t	module:GameTest
+accept_move	hangman/lib/hangman/game.ex	/^  defp accept_move(game, _guess, _already_guessed = true) do$/;"	f	module:Game	access:private
+accept_move	hangman/lib/hangman/game.ex	/^  defp accept_move(game, guess, _not_already_guessed) do$/;"	f	module:Game	access:private
+application	dictionary/mix.exs	/^  def application do$/;"	f	module:MixProject	access:public
+application	hangman/mix.exs	/^  def application do$/;"	f	module:MixProject	access:public
+bad guess is recognized	hangman/test/game_test.exs	/^  test "bad guess is recognized" do$/;"	t	module:GameTest
+clean_input	hangman/lib/hangman/game.ex	/^  defp clean_input(input) do$/;"	f	module:Game	access:private
+deps	dictionary/mix.exs	/^  defp deps do$/;"	f	module:MixProject	access:private
+deps	hangman/mix.exs	/^  defp deps do$/;"	f	module:MixProject	access:private
+greets the world	dictionary/test/dictionary_test.exs	/^  test "greets the world" do$/;"	t	module:DictionaryTest
+load_word_list	dictionary/lib/dictionary.ex	/^  def load_word_list do$/;"	f	module:Dictionary	access:public
+make_move	hangman/lib/hangman.ex	/^  def make_move(game, guess) do$/;"	f	module:Hangman	access:public
+make_move	hangman/lib/hangman/game.ex	/^  def make_move(game = %{game_state: state}, _guess)$/;"	f	module:Game	access:public
+make_move	hangman/lib/hangman/game.ex	/^  def make_move(game, guess) do$/;"	f	module:Game	access:public
+maybe_won	hangman/lib/hangman/game.ex	/^  defp maybe_won(_), do: :good_guess$/;"	f	module:Game	access:private
+maybe_won	hangman/lib/hangman/game.ex	/^  defp maybe_won(true), do: :won$/;"	f	module:Game	access:private
+new_game	hangman/lib/hangman.ex	/^  defdelegate new_game(), to: Game$/;"	d	module:Hangman
+new_game	hangman/lib/hangman/game.ex	/^  def new_game() do$/;"	f	module:Game	access:public
+new_game	hangman/lib/hangman/game.ex	/^  def new_game(word) do$/;"	f	module:Game	access:public
+new_game returns structure	hangman/test/game_test.exs	/^  test "new_game returns structure" do$/;"	t	module:GameTest
+project	dictionary/mix.exs	/^  def project do$/;"	f	module:MixProject	access:public
+project	hangman/mix.exs	/^  def project do$/;"	f	module:MixProject	access:public
+random_word	dictionary/lib/dictionary.ex	/^  def random_word do$/;"	f	module:Dictionary	access:public
+reveal_guessed	hangman/lib/hangman/game.ex	/^  defp reveal_guessed(letters, used) do$/;"	f	module:Game	access:private
+reveal_letter	hangman/lib/hangman/game.ex	/^  defp reveal_letter(_letter, _not_in_word), do: "_"$/;"	f	module:Game	access:private
+reveal_letter	hangman/lib/hangman/game.ex	/^  defp reveal_letter(letter, _in_word = true), do: letter$/;"	f	module:Game	access:private
+score_guess	hangman/lib/hangman/game.ex	/^  defp score_guess(game = %{turns_left: 1}, _bad_guess) do$/;"	f	module:Game	access:private
+score_guess	hangman/lib/hangman/game.ex	/^  defp score_guess(game = %{turns_left: turns_left}, _bad_guess) do$/;"	f	module:Game	access:private
+score_guess	hangman/lib/hangman/game.ex	/^  defp score_guess(game, _good_guess = true) do$/;"	f	module:Game	access:private
+tally	hangman/lib/hangman.ex	/^  defdelegate tally(game), to: Game$/;"	d	module:Hangman
+tally	hangman/lib/hangman/game.ex	/^  def tally(game) do$/;"	f	module:Game	access:public
