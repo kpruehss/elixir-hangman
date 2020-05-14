@@ -3,11 +3,13 @@ defmodule TextClient.Player do
   alias TextClient.{Mover, Prompter, State, Summary}
 
   # won, lost, good guess, bad guess, already used, initializing
-  def play(%State{tally: %{game_state: :won}}) do
+  def play(game = %State{tally: %{game_state: :won}}) do
+    IO.puts "The word is #{reveal_word(game)}"
     exit_with_message("YOU WON!")
   end
 
-  def play(%State{tally: %{game_state: :lost}}) do
+  def play(game =%State{tally: %{game_state: :lost}}) do
+    IO.puts "The word is #{reveal_word(game)}"
     exit_with_message("Sorry, you lost")
   end
   
@@ -43,5 +45,11 @@ defmodule TextClient.Player do
   defp exit_with_message(msg) do
     IO.puts(msg)
     exit(:normal)
+  end
+
+  defp reveal_word(game) do
+    game.game_service.letters
+    |> Enum.join("")
+    |> String.upcase
   end
 end
