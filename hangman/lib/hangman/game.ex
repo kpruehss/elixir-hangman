@@ -10,12 +10,12 @@ defmodule Hangman.Game do
 
   def new_game(word) do
     %Hangman.Game{
-      letters: word |> String.codepoints()
+      letters: word |> String.codepoints
     }
   end
 
   def new_game() do
-    new_game(Dictionary.random_word())
+    new_game(Dictionary.random_word)
   end
 
   def make_move(game = %{game_state: state}, _guess)
@@ -65,8 +65,6 @@ defmodule Hangman.Game do
     %{game | game_state: :bad_guess, turns_left: turns_left - 1}
   end
 
-  defp return_with_tally(game), do: {game, tally(game)}
-
   defp reveal_guessed(letters, used) do
     letters
     |> Enum.map(fn letter ->
@@ -79,4 +77,5 @@ defmodule Hangman.Game do
 
   defp maybe_won(true), do: :won
   defp maybe_won(_), do: :good_guess
+  defp return_with_tally(game), do: {game, tally(game)}
 end
